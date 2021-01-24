@@ -4,83 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./static/index.css">
 </head>
 <body>
-    <header>
-        <ul>
-            <li><a href="#general">General</a></li>
-            <li><a href="#pchallenge">Programming Challenges</a></li>
-            <li><a href="#htmlcss">HTML/CSS</a></li>
-            <li><a href="#git">Git</a></li>
-            <li><a href="#freebies">Freebies</a></li>
-            <li><a href="#crashcourse">Crashcourse Video</a></li>
-            <li><a href="#nashfun">(Not) Fun</a></li>
-        </ul>
-    </header>
-    <main>
-        <section>
-            <h2>General Stuffs</h2>
-            <ul id="general">
-            </ul>
-        </section>
-        <section>
-            <h2>Programming Challenges</h2>
-            <ul id="pchallenge">
-            </ul>
-        </section>
-        <section>
-            <h2>HTML/CSS</h2>
-            <ul id="htmlcss">
-            </ul>
-        </section>
-        <section>
-            <h2>Git</h2>
-            <ul id="git">
-            </ul>
-        </section>
-        <section>
-            <h2>Freebies</h2>
-            <ul id="freebies">
-            </ul>
-        </section>
-        <section>
-            <h2>Crash Courses</h2>
-            <ul id="crashcourse">
-            </ul>
-        </section>
-        <section>
-            <h2>(Not) Fun</h2>
-            <ul id="nashfun">
-            </ul>
-        </section>
-    </main>
-    <script>
-        function addLink(income,type,info,link){
-            let here=document.getElementById(income);
-            let newLink = document.createElement("a");
-            newLink.appendChild(document.createTextNode(info));
-            newLink.href=link;
-            let newListItem = document.createElement(type);
-            newListItem.appendChild(newLink);
-            here.appendChild(newListItem);
-        }
-        var d=[]
-        c=fetch("./GetCheatArchive.csv")
-        .then(response=>response.text())
-        .then(text=>{
-            console.log(text);
-            webSiteList=text.split("\r\n");
-            for (count=1;count<=webSiteList.length-1;count++)
-            {
-                curSite=webSiteList[count].split(",");
-                curNode=curSite[2];
-                link=curSite[1];
-                desc=curSite[0];
-                addLink(curNode,"li",desc,link);
-                console.log(curNode+link+desc);
-            }
-        });
-        console.log(d)
-    </script>
+    <div class="gridbox">
+        <div id="left">
+            <header>
+                <h1>GetCheat.Tech</h1>
+            </header>
+            <nav>
+                <ul id="content">
+                    <li><a href="#general">General</a></li>
+                    <li><a href="#pchallenge">Programming Challenges</a></li>
+                    <li><a href="#htmlcss">HTML/CSS</a></li>
+                    <li><a href="#git">Git</a></li>
+                    <li><a href="#freebies">Freebies</a></li>
+                    <li><a href="#crashcourse">Crashcourse Video</a></li>
+                    <li><a href="#nashfun">(Not) Fun</a></li>
+                </ul>
+            </nav>
+            <footer>
+                (c)2021 Someone Not Me
+            </footer>
+        </div>
+        <main id="right">
+            <section>
+                <h2>General Stuffs</h2>
+                <ul id="general">
+                </ul>
+            </section>
+            <section>
+                <h2>Programming Challenges</h2>
+                <ul id="pchallenge">
+                </ul>
+            </section>
+            <section>
+                <h2>HTML/CSS</h2>
+                <ul id="htmlcss">
+                </ul>
+            </section>
+            <section>
+                <h2>Git</h2>
+                <ul id="git">
+                </ul>
+            </section>
+            <section>
+                <h2>Freebies</h2>
+                <ul id="freebies">
+                </ul>
+            </section>
+            <section>
+                <h2>Crash Courses</h2>
+                <ul id="crashcourse">
+                </ul>
+            </section>
+            <section>
+                <h2>(Not) Fun</h2>
+                <ul id="nashfun">
+                </ul>
+            </section>
+        </main>
+    </div>
+<script src="./static/index.js"></script>
 </body>
 </html>
